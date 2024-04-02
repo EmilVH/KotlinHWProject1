@@ -1,5 +1,6 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.9.23'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.7.20'
 }
 
 group = 'org.example'
@@ -10,8 +11,18 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+    testImplementation "org.jetbrains.kotlin:kotlin-test"
+
+    implementation "io.ktor:ktor-server-core:2.3.9"
+    implementation "io.ktor:ktor-server-netty:2.3.9"
+    implementation "io.ktor:ktor-server-content-negotiation:2.3.9"
+    implementation "io.ktor:ktor-serialization-kotlinx-json:2.3.9"
+
+    implementation "io.insert-koin:koin-core:3.5.3"
+    implementation "io.insert-koin:koin-ktor:3.5.3"
+    implementation "org.jetbrains.kotlinx:kotlinx-datetime:0.5.0"
 }
+
 
 test {
     useJUnitPlatform()
